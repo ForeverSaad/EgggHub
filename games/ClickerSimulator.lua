@@ -7,7 +7,7 @@
 
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
 local VirtualInputManager = game:GetService("VirtualInputManager")
-local Window = OrionLib:MakeWindow({Name = "EGGG HUB", HidePremium = true, SaveConfig = false, ConfigFolder = "C3RILFORGE"})
+local Window = OrionLib:MakeWindow({Name = "EGGG HUB", HidePremium = true, SaveConfig = true, ConfigFolder = "C3RILFORGE"})
 
 -- Local player variables
 local LocalPlayer = game.Players.LocalPlayer
@@ -235,48 +235,6 @@ AutoFarmTab:AddBind({
 })
 
 
--- Pets tab
-
-function OpenEgg(Egg)
-    local args = {
-        [1] = Egg,
-        [2] = false,
-        [3] = false
-    }
-    
-    game:GetService("ReplicatedStorage").Events.Client.purchaseEgg2:InvokeServer(unpack(args))    
-end
-
--- Auto open egg variables
-local Enabled = false
-local CurrentEgg = nil
-
-PetsTab:AddToggle({
-    Name = "Auto Open Eggs",
-    Default = false,
-    Callback = function(Value)
-
-    end
-})
-
-local EquipBestPets = false
-
-PetsTab:AddToggle({
-    Name = "Auto Equip Best Pets",
-    Default = false,
-    Callback = function(Value)
-        if EquipBestPets == false then
-            EquipBestPets = true
-            repeat
-                game:GetService("ReplicatedStorage").Events.Client.petsTools.equipBest:FireServer()
-                wait(0.5)
-            until EquipBestPets == false
-        else
-            EquipBestPets = false
-        end
-    end
-})
-
 -- Teleport tab
 TeleportTab:AddDropdown({
     Name = "World 1",
@@ -452,7 +410,7 @@ CreditsTab:AddParagraph("Ezpi#0474","Modified their AFK autoclicker to work with
 
 
 
-Notify("Loaded!", "Eggg hub has been loaded. The Discord invite has been copied to your clipboard.", "0", 15)
-setclipboard("https://discord.gg/EZ7jHkHjyX")
+Notify("Loaded!", "Eggg hub has been loaded. The Discord invite has been copied to your clipboard.", "0", 5)
+setclipboard("https://discord.gg/EZ7jHkHjyX"))  
 
 OrionLib:Init()
