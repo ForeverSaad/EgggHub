@@ -411,6 +411,6 @@ CreditsTab:AddParagraph("Ezpi#0474","Modified their AFK autoclicker to work with
 
 
 Notify("Loaded!", "Eggg hub has been loaded. The Discord invite has been copied to your clipboard.", "0", 5)
-setclipboard("https://discord.gg/EZ7jHkHjyX"))  
+setclipboard("https://discord.gg/EZ7jHkHjyX")
 
 OrionLib:Init()
