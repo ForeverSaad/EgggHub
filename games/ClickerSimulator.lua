@@ -261,7 +261,7 @@ PetsTab:AddToggle({
 })
 
 PetsTab:AddDropdown({
-    Name = "Auto Open Eggs",
+    Name = "Egg Selector",
     Default = "",
     Options = {"Event Egg (300Qa)", "Basic Egg (250)", "Earth Egg (2.5k)", "Sun God Egg (1.5M)", "Frozen Arctic Egg (25M)", "Lava Dragon Egg (2B)", "Treasure Egg (65B)", "Space Guardian Egg (3.75T)", "Treeland Egg (100T)", "Ice Cream Egg (1.9Qa)", "Atlantis Egg (62Qa)", "Tropical Egg (1.1Sx)", "Bee Egg (60Sx)", "Galaxy Egg (5Sp)"},
     Callback = function(Value)
@@ -452,7 +452,7 @@ LocalPlayerTab:AddSlider({
     Default = 5,
     Color = Color3.fromRGB(255,255,255),
     Increment = 1,
-    ValueName = "Speed",
+    ValueName = "Jump Power",
     Callback = function(Value)
         Char.Humanoid.JumpPower = tonumber(Value)
     end    
