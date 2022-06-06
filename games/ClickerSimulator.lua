@@ -263,7 +263,7 @@ PetsTab:AddToggle({
 PetsTab:AddDropdown({
     Name = "Egg Selector",
     Default = "",
-    Options = {"Event Egg (300Qa)", "Basic Egg (250)", "Earth Egg (2.5k)", "Sun God Egg (1.5M)", "Frozen Arctic Egg (25M)", "Lava Dragon Egg (2B)", "Treasure Egg (65B)", "Space Guardian Egg (3.75T)", "Treeland Egg (100T)", "Ice Cream Egg (1.9Qa)", "Atlantis Egg (62Qa)", "Tropical Egg (1.1Sx)", "Bee Egg (60Sx)", "Galaxy Egg (5Sp)"},
+    Options = {"Event Egg (300Qa)", "Basic Egg (250)", "Earth Egg (2.5k)", "Sun God Egg (1.5M)", "Frozen Arctic Egg (25M)", "Lava Dragon Egg (2B)", "Treasure Egg (65B)", "Space Guardian Egg (3.75T)", "Treeland Egg (100T)", "Ice Cream Egg (1.9Qa)", "Atlantis Egg (62Qa)", "Tropical Egg (1.1Sx)", "Bee Egg (60Sx)", "Galaxy Egg (5Sp)", "Tech Egg (1No)", "Robot Egg (500No)", "Chemical Egg (150Dc)", "Steampunk Egg (100Ud)", "Holographic Egg (60.9Td)", "Music Egg (75Qad)", "Hacker Egg (2.08Sd)", "Mars Egg (606.06Sd)", "Time Egg (90St)", "Dinosaur Egg (150O)", "Egypt Egg (600O)", "Ice Age Egg (15N)", "Samurai Egg (375N)", "Rome Egg (10v)"},
     Callback = function(Value)
         if Value == "Event Egg (300Qa)" then
             CurrentAutoPet = workspace.Eggs["300M Event"]
@@ -293,6 +293,34 @@ PetsTab:AddDropdown({
             CurrentAutoPet = workspace.Eggs.Bee
         elseif Value == "Galaxy Egg (5Sp)" then
             CurrentAutoPet = workspace.Eggs.Galaxy
+        elseif Value == "Tech Egg (1No)" then
+            CurrentAutoPet = workspace.Eggs.Tech
+        elseif Value == "Robot Egg (500No)" then
+            CurrentAutoPet = workspace.Eggs.Robot
+        elseif Value == "Chemical Egg (150Dc)" then
+            CurrentAutoPet = workspace.Eggs.Chemical
+        elseif Value == "Steampunk Egg (100Ud)" then
+            CurrentAutoPet = workspace.Eggs.Steampunk
+        elseif Value == "Holographic Egg (60.9Td)" then
+            CurrentAutoPet = workspace.Eggs.Holographic
+        elseif Value == "Music Egg (75Qad)" then
+            CurrentAutoPet = workspace.Eggs.Music
+        elseif Value == "Hacker Egg (2.08Sd)" then
+            CurrentAutoPet = workspace.Eggs.Hacker
+        elseif Value == "Mars Egg (606.06Sd)" then
+            CurrentAutoPet = workspace.Eggs.Mars
+        elseif Value == "Time Egg (90St)" then
+            CurrentAutoPet = workspace.Eggs.Time
+        elseif Value == "Dinosaur Egg (150O)" then
+            CurrentAutoPet = workspace.Eggs.Dinosaur
+        elseif Value == "Egypt Egg (600O)" then
+            CurrentAutoPet = workspace.Eggs.Egypt
+        elseif Value == "Ice Age Egg (15N)" then
+            CurrentAutoPet = workspace.Eggs["Ice Age"]
+        elseif Value == "Samurai Egg (375N)" then
+            CurrentAutoPet = workspace.Eggs.Samurai
+        elseif Value == "Rome Egg (10v)" then
+            CurrentAutoPet = workspace.Eggs.Rome
         end
     end
 })
