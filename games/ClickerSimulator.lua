@@ -234,6 +234,68 @@ AutoFarmTab:AddBind({
 	end  
 })
 
+-- Pets tab
+
+local AutoPet = false
+local CurrentAutoPet = nil
+
+function PurchaseEgg(EggLocation)
+    local Egg = EggLocation
+    local ohBoolean2 = false
+    local ohBoolean3 = false
+
+    game:GetService("ReplicatedStorage").Events.Client.purchaseEgg2:InvokeServer(Egg, ohBoolean2, ohBoolean3)
+end
+
+PetsTab:AddToggle({
+    Name = "Auto Open Eggs",
+    Default = false,
+    Callback = function(Value)
+        if Value then
+            AutoPet = true
+            repeat PurchaseEgg(CurrentAutoPet) until AutoPet == false
+        else
+            AutoPet = false
+        end
+    end
+})
+
+PetsTab:AddDropdown({
+    Name = "Auto Open Eggs",
+    Default = "",
+    Options = {"Event Egg (300Qa)", "Basic Egg (250)", "Earth Egg (2.5k)", "Sun God Egg (1.5M)", "Frozen Arctic Egg (25M)", "Lava Dragon Egg (2B)", "Treasure Egg (65B)", "Space Guardian Egg (3.75T)", "Treeland Egg (100T)", "Ice Cream Egg (1.9Qa)", "Atlantis Egg (62Qa)", "Tropical Egg (1.1Sx)", "Bee Egg (60Sx)", "Galaxy Egg (5Sp)"},
+    Callback = function(Value)
+        if Value == "Event Egg (300Qa)" then
+            CurrentAutoPet = workspace.Eggs["300M Event"]
+        elseif Value == "Basic Egg (250)" then
+            CurrentAutoPet = workspace.Eggs.Basic
+        elseif Value == "Earth Egg (2.5k)" then
+            CurrentAutoPet = workspace.Eggs.Earth
+        elseif Value == "Sun God Egg (1.5M)" then
+            CurrentAutoPet = workspace.Eggs["Sun God"]
+        elseif Value == "Frozen Arctic Egg (25M)" then
+            CurrentAutoPet = workspace.Eggs["Frozen Arctic"]
+        elseif Value == "Lava Dragon Egg (2B)" then
+            CurrentAutoPet = workspace.Eggs["Lava Dragon"]
+        elseif Value == "Treasure Egg (65B)" then
+            CurrentAutoPet = workspace.Eggs.Treasure
+        elseif Value == "Space Guardian Egg (3.75T)" then
+            CurrentAutoPet = workspace.Eggs["Space Guardian"]
+        elseif Value == "Treeland Egg (100T)" then
+            CurrentAutoPet = workspace.Eggs.Treeland
+        elseif Value == "Ice Cream Egg (1.9Qa)" then
+            CurrentAutoPet = workspace.Eggs["Ice Cream"]
+        elseif Value == "Atlantis Egg (62Qa)" then
+            CurrentAutoPet = workspace.Eggs.Atlantis
+        elseif Value == "Tropical Egg (1.1Sx)" then
+            CurrentAutoPet = workspace.Eggs.Tropical
+        elseif Value == "Bee Egg (60Sx)" then
+            CurrentAutoPet = workspace.Eggs.Bee
+        elseif Value == "Galaxy Egg (5Sp)" then
+            CurrentAutoPet = workspace.Eggs.Galaxy
+        end
+    end
+})
 
 -- Teleport tab
 TeleportTab:AddDropdown({
@@ -403,14 +465,11 @@ LocalPlayerTab:AddButton({
     end
 })
 
-CreditsTab:AddParagraph("eggg#5231","The creator and only developer of this script hub.")
-CreditsTab:AddParagraph("OrionLib", "The library used for this script hub.")
-CreditsTab:AddParagraph("Infinite Yield","Used for removing purchase prompts.")
-CreditsTab:AddParagraph("Ezpi#0474","Modified their AFK autoclicker to work with this script.")
+CreditsTab:AddParagraph("Credits","eggg#5231 - Main Developer\n")
 
 
 
-Notify("Loaded!", "Eggg hub has been loaded. The Discord invite has been copied to your clipboard.", "0", 5)
+Notify("Loaded!", "Eggg hub has been loaded. 😎The Discord invite has been copied to your clipboard.", "0", 5)
 setclipboard("https://discord.gg/EZ7jHkHjyX")
 
 OrionLib:Init()
