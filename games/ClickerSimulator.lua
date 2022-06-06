@@ -253,7 +253,7 @@ PetsTab:AddToggle({
     Callback = function(Value)
         if Value then
             AutoPet = true
-            repeat PurchaseEgg(CurrentAutoPet) until AutoPet == false
+            repeat PurchaseEgg(CurrentAutoPet) wait(0.3) until AutoPet == false
         else
             AutoPet = false
         end
