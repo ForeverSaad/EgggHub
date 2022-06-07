@@ -110,7 +110,7 @@ AutoFarmTab:AddDropdown({
 	Name = "Auto Rebirth Amount",
 	Default = "1",
     --          1    5    10    50    250     1k      5k      25k      125k      500k       3m          15m        50m         250m          1b             5b           25b             50b             150b            750b            3.5T              20T               100T              500T                2.5QA                 15QA                75QA                 375QA                  2.5QI                  15QI                     75QI                    375QI             2SX      10SX      50SX      250SX      1.5sp      20sp      100sp     600sp
-	Options = {"1", "5", "10", "50", "250", "1K", "5K", "25K", "125K", "500K", "3M", "15M", "50M", "250M", "1B", "5B", "25B", "50B", "150B", "750B", "3.5T", "20T", "100T", "500T", "2.5Qa", "15Qa", "75Qa", "375Qa", "2.5Qi", "15Qi", "75Qi", "375Qi", "2Sx", "10Sx", "50Sx", "250Sx", "1.5Sp", "20Sp", "100Sp", "600Sp", "3Oc", "18Oc", "90OC", "500Oc", "2.5No", "15No", "75No", "450No", "2.5Dc"},
+	Options = {"1", "5", "10", "50", "250", "1K", "5K", "25K", "125K", "500K", "3M", "15M", "50M", "250M", "1B", "5B", "25B", "50B", "150B", "750B", "3.5T", "20T", "100T", "500T", "2.5Qa", "15Qa", "75Qa", "375Qa", "2.5Qi", "15Qi", "75Qi", "375Qi", "2Sx", "10Sx", "50Sx", "250Sx", "1.5Sp", "20Sp", "100Sp", "600Sp", "3Oc", "18Oc", "90OC", "500Oc", "2.5No", "15No", "75No", "450No", "2.5Dc", "15Dc", "75Dc"},
 	Callback = function(Value)
 		if Value == "1" then
             AutoRebirthValue = 1
@@ -210,6 +210,10 @@ AutoFarmTab:AddDropdown({
             AutoRebirthValue = 4.5e+32
         elseif Value == "2.5Dc" then
             AutoRebirthValue = 2.5e+33
+        elseif Value == "15Dc" then
+            AutoRebirthValue = 1.5e+34
+        elseif Value == "75Dc" then
+            AutoRebirthValue = 7.5e+34
         end
 	end
 })
@@ -267,7 +271,7 @@ PetsTab:AddToggle({
 PetsTab:AddDropdown({
     Name = "Egg Selector",
     Default = "",
-    Options = {"Event Egg (300Qa)", "Basic Egg (250)", "Earth Egg (2.5k)", "Sun God Egg (1.5M)", "Frozen Arctic Egg (25M)", "Lava Dragon Egg (2B)", "Treasure Egg (65B)", "Space Guardian Egg (3.75T)", "Treeland Egg (100T)", "Ice Cream Egg (1.9Qa)", "Atlantis Egg (62Qa)", "Tropical Egg (1.1Sx)", "Bee Egg (60Sx)", "Galaxy Egg (5Sp)", "Tech Egg (1No)", "Robot Egg (500No)", "Chemical Egg (150Dc)", "Steampunk Egg (100Ud)", "Holographic Egg (60.9Td)", "Music Egg (75Qad)", "Hacker Egg (2.08Sd)", "Mars Egg (606.06Sd)", "Time Egg (90St)", "Dinosaur Egg (150O)", "Egypt Egg (600O)", "Ice Age Egg (15N)", "Samurai Egg (375N)", "Rome Egg (10v)", "Jungle Egg (300v)", "Viking Egg (3.5Uvg)"},
+    Options = {"Event Egg (300Qa)", "Basic Egg (250)", "Earth Egg (2.5k)", "Sun God Egg (1.5M)", "Frozen Arctic Egg (25M)", "Lava Dragon Egg (2B)", "Treasure Egg (65B)", "Space Guardian Egg (3.75T)", "Treeland Egg (100T)", "Ice Cream Egg (1.9Qa)", "Atlantis Egg (62Qa)", "Tropical Egg (1.1Sx)", "Bee Egg (60Sx)", "Galaxy Egg (5Sp)", "Tech Egg (1No)", "Robot Egg (500No)", "Chemical Egg (150Dc)", "Steampunk Egg (100Ud)", "Holographic Egg (60.9Td)", "Music Egg (75Qad)", "Hacker Egg (2.08Sd)", "Mars Egg (606.06Sd)", "Time Egg (90St)", "Dinosaur Egg (150O)", "Egypt Egg (600O)", "Ice Age Egg (15N)", "Samurai Egg (375N)", "Rome Egg (10v)", "Jungle Egg (300v)", "Viking Egg (3.5Uvg)", "Wild West Egg (30Uvg)"},
     Callback = function(Value)
         if Value == "Event Egg (300Qa)" then
             CurrentAutoPet = workspace.Eggs["300M Event"]
@@ -329,6 +333,8 @@ PetsTab:AddDropdown({
             CurrentAutoPet = workspace.Eggs.Jungle
         elseif Value == "Viking Egg (3.5Uvg)" then
             CurrentAutoPet = workspace.Eggs.Viking
+        elseif Value == "Wild West Egg (30Uvg)" then
+            CurrentAutoPet = workspace.Eggs["Wild West"]
         end
     end
 })
@@ -436,7 +442,7 @@ TeleportTab:AddDropdown({
 TeleportTab:AddDropdown({
     Name = "World 3",
     Default = "",
-    Options = {"Ground", "Dinosaur Island (Island 1)", "Egypt Island (Island 2)", "Ice Age Island (Island 3)", "Samurai Island (Island 4)", "Rome Island (Island 5)", "Jungle Island (Island 6)", "Viking Island (Island 7)"},
+    Options = {"Ground", "Dinosaur Island (Island 1)", "Egypt Island (Island 2)", "Ice Age Island (Island 3)", "Samurai Island (Island 4)", "Rome Island (Island 5)", "Jungle Island (Island 6)", "Viking Island (Island 7)", "Wild West Island (Island 8)"},
     Callback = function(Value)
         if Value == "Ground" then
             -- Teleport to -9924, 12, -1853
@@ -470,6 +476,10 @@ TeleportTab:AddDropdown({
             -- Teleport to -9946, 10811, -2017
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9946, 10811, -2017)
             Notify("Teleported", "You have been teleported to Viking Island (Island 7)", "7183903911", 2.5)
+        elseif Value == "Wild West Island (Island 8)" then
+            -- Teleport to -9951, 13074, -2034
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9951, 13074, -2034)
+            Notify("Teleported", "You have been teleported to Wild West Island (Island 8)", "7183903911", 2.5)
         end
     end
 })
