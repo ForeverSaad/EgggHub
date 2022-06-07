@@ -110,7 +110,7 @@ AutoFarmTab:AddDropdown({
 	Name = "Auto Rebirth Amount",
 	Default = "1",
     --          1    5    10    50    250     1k      5k      25k      125k      500k       3m          15m        50m         250m          1b             5b           25b             50b             150b            750b            3.5T              20T               100T              500T                2.5QA                 15QA                75QA                 375QA                  2.5QI                  15QI                     75QI                    375QI             2SX      10SX      50SX      250SX      1.5sp      20sp      100sp     600sp
-	Options = {"1", "5", "10", "50", "250", "1K", "5K", "25K", "125K", "500K", "3M", "15M", "50M", "250M", "1B", "5B", "25B", "50B", "150B", "750B", "3.5T", "20T", "100T", "500T", "2.5Qa", "15Qa", "75Qa", "375Qa", "2.5Qi", "15Qi", "75Qi", "375Qi", "2Sx", "10Sx", "50Sx", "250Sx", "1.5Sp", "20Sp", "100Sp", "600Sp", "3Oc", "18Oc", "90OC", "500Oc", "2.5No", "15No", "75No", "450No"},
+	Options = {"1", "5", "10", "50", "250", "1K", "5K", "25K", "125K", "500K", "3M", "15M", "50M", "250M", "1B", "5B", "25B", "50B", "150B", "750B", "3.5T", "20T", "100T", "500T", "2.5Qa", "15Qa", "75Qa", "375Qa", "2.5Qi", "15Qi", "75Qi", "375Qi", "2Sx", "10Sx", "50Sx", "250Sx", "1.5Sp", "20Sp", "100Sp", "600Sp", "3Oc", "18Oc", "90OC", "500Oc", "2.5No", "15No", "75No", "450No", "2.5Dc"},
 	Callback = function(Value)
 		if Value == "1" then
             AutoRebirthValue = 1
@@ -206,6 +206,10 @@ AutoFarmTab:AddDropdown({
             AutoRebirthValue = 1.5e+31
         elseif Value == "75No" then
             AutoRebirthValue = 7.5e+31
+        elseif Value == "450No" then
+            AutoRebirthValue = 4.5e+32
+        elseif Value == "2.5Dc" then
+            AutoRebirthValue = 2.5e+33
         end
 	end
 })
