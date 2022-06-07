@@ -436,7 +436,7 @@ TeleportTab:AddDropdown({
 TeleportTab:AddDropdown({
     Name = "World 3",
     Default = "",
-    Options = {"Ground", "Dinosaur Island (Island 1)", "Egypt Island (Island 2)", "Ice Age Island (Island 3)", "Samurai Island (Island 4)", "Rome Island (Island 5)"},
+    Options = {"Ground", "Dinosaur Island (Island 1)", "Egypt Island (Island 2)", "Ice Age Island (Island 3)", "Samurai Island (Island 4)", "Rome Island (Island 5)", "Jungle Island (Island 6)", "Viking Island (Island 7)"},
     Callback = function(Value)
         if Value == "Ground" then
             -- Teleport to -9924, 12, -1853
@@ -462,6 +462,14 @@ TeleportTab:AddDropdown({
             -- Teleport to -9939, 6367, -1993
             game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9939, 6367, -1993)
             Notify("Teleported", "You have been teleported to Rome Island (Island 5)", "7183903911", 2.5)
+        elseif Value == "Jungle Island (Island 6)" then
+            -- Teleport to -9958, 8421, -2019
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9958, 8421, -2019)
+            Notify("Teleported", "You have been teleported to Jungle Island (Island 6)", "7183903911", 2.5)
+        elseif Value == "Viking Island (Island 7)" then
+            -- Teleport to -9946, 10811, -2017
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-9946, 10811, -2017)
+            Notify("Teleported", "You have been teleported to Viking Island (Island 7)", "7183903911", 2.5)
         end
     end
 })
