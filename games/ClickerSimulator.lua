@@ -519,7 +519,7 @@ LocalPlayerTab:AddButton({
     end
 })
 
-CreditsTab:AddParagraph("Credits","eggg#5231 - Main Developer\n")
+CreditsTab:AddParagraph("Credits","eggg#5231 - Main Developer\nEzpi#0474 - Modified their autoclicker AFKable autoclicker\nInfinite Yield - Edited noprompts\nOrionLib - Library for the script")
 
 
 
